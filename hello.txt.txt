@@ -1,1 +1,21 @@
-hello world
+def smaller_scores(L:list, N:int):
+
+
+	s = [0 for i in range(N)]
+	for i in range(N-1):
+		for j in range(i+1,N):
+			if L[i] > L[j]:
+				s[i] += 1
+	print(*s)
+
+
+while True:
+	try:
+		N = int(input())
+		L = list(map(int,input().split()))
+		if len(L) != N:
+			raise ValueError
+	except ValueError:
+		print('incorect input, try again')
+		continue
+	smaller_scores(L,N)
